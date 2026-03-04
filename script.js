@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = document.createElement('a');
         link.href = 'mailto:' + em;
         link.className = 'contact-link';
-        link.innerHTML = '<i class="ph ph-envelope-simple"></i> Contact Us';
+        link.innerHTML = '<i class="ph ph-envelope-simple"></i> Contact Me';
 
         contactContainer.appendChild(link);
     }
