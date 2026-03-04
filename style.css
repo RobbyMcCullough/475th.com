@@ -193,23 +193,61 @@ header {
     font-size: 1.25rem;
 }
 
-.source-link {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    width: 100%;
+.article-image {
+    margin: 3rem 0;
+    text-align: center;
 }
 
-.source-link:hover {
+.article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.article-image figcaption {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-family: 'Outfit', sans-serif;
+}
+
+.sources-section {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.sources-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sources-section ol {
+    padding-left: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.sources-section li {
+    margin-bottom: 0.75rem;
+}
+
+.sources-section a {
     color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.sources-section a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
 }
 
 .services-grid {
