@@ -1,6 +1,6 @@
 # 47 5th St. Petaluma - Landing Page
 
-A beautiful, lightweight landing page designed to celebrate the history of **47 5th St.**, an 1890s-era Victorian home located in the historic A St. District of Petaluma.
+A beautiful, lightweight landing page designed to celebrate the history of **47 5th St.**, an 1880 Gothic Revival Victorian home located in the historic A St. District of Petaluma.
 
 ## Overview
 This repository contains a simple, responsive, and performance-optimized HTML/CSS/JS frontend built to showcase an architectural rendering of the property alongside its historical background. It was originally conceptualized as an elegant, locally-hosted homepage.
