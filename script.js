@@ -1,44 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clockElement = document.getElementById('clock');
-    const greetingElement = document.getElementById('greeting');
     const yearElement = document.getElementById('year');
 
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
-
-    function updateTimeAndGreeting() {
-        const now = new Date();
-
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        if (clockElement) {
-            clockElement.textContent = `${hours}:${minutes}`;
-        }
-
-        const hour = now.getHours();
-        let greeting = 'Good Evening';
-
-        if (hour >= 5 && hour < 12) {
-            greeting = 'Good Morning';
-        } else if (hour >= 12 && hour < 17) {
-            greeting = 'Good Afternoon';
-        }
-
-        if (greetingElement) {
-            greetingElement.textContent = greeting;
-        }
-    }
-
-    updateTimeAndGreeting();
-
-    const now = new Date();
-    const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-
-    setTimeout(() => {
-        updateTimeAndGreeting();
-        setInterval(updateTimeAndGreeting, 60000);
-    }, msUntilNextMinute);
 
     // Obfuscated Email logic
     const contactContainer = document.getElementById('contact-container');
@@ -47,10 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const domain = 'gmail.com';
         const em = user + '@' + domain;
 
+        const envelopeIcon = '<svg viewBox="0 0 256 256" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">'
+            + '<path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path>'
+            + '</svg>';
+
         const link = document.createElement('a');
         link.href = 'mailto:' + em;
         link.className = 'contact-link';
-        link.innerHTML = '<i class="ph ph-envelope-simple"></i> Contact Me';
+        link.innerHTML = envelopeIcon + ' Contact Me';
 
         contactContainer.appendChild(link);
     }

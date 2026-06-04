@@ -43,26 +43,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.greeting-wrapper {
-    display: flex;
-    gap: 1rem;
+.eyebrow {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 1rem;
-    align-items: center;
-}
-
-.clock {
-    padding-left: 1rem;
-    border-left: 1px solid var(--border-color);
+    margin-bottom: 1.25rem;
 }
 
 .title {
@@ -70,15 +62,16 @@ header {
     font-size: 4.5rem;
     font-weight: 600;
     color: var(--text-primary);
-    line-height: 1;
+    line-height: 1.05;
     letter-spacing: -1px;
+    margin: 0;
 }
 
 .subtitle {
     font-size: 1.15rem;
     color: var(--text-secondary);
     font-weight: 300;
-    margin-top: 0.25rem;
+    margin-top: 0.85rem;
 }
 
 .hero-image-wrapper {
@@ -146,6 +139,7 @@ header {
     margin-bottom: 1.5rem;
 }
 
+.article-content h2,
 .article-content h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -164,33 +158,68 @@ header {
     color: var(--accent-color);
 }
 
-.highlight-box {
-    background-color: var(--bg-color);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2.5rem 0;
-    border-left: 4px solid var(--accent-color);
+/* Architectural specimen plate — squared double-rule frame, deliberately
+   contrasts the rounded cards elsewhere so it reads as a printed field plate. */
+.spec-plate {
+    position: relative;
+    margin: 3.5rem 0;
+    padding: 2.5rem 2.75rem;
+    background-color: #faf7f2;
+    border: 1px solid var(--text-primary);
 }
 
-.highlight-box h3 {
-    margin-top: 0;
+.spec-plate::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(186, 153, 116, 0.55);
+    pointer-events: none;
 }
 
-.highlight-box ul {
-    list-style: none;
-    margin-top: 1rem;
-}
-
-.highlight-box li {
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.highlight-box i {
+.spec-plate__label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     color: var(--accent-color);
-    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.spec-plate h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text-primary);
+    margin: 0 0 1.25rem;
+}
+
+.spec-plate > p {
+    margin-bottom: 0;
+}
+
+.spec-plate__features {
+    list-style: none;
+    margin-top: 1.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.spec-plate__features li {
+    position: relative;
+    padding: 0.85rem 0 0.85rem 1.85rem;
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.5;
+}
+
+/* Lozenge marker — a Gothic/Victorian motif, not a generic checkmark. */
+.spec-plate__features li::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 1.4rem;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent-color);
+    transform: rotate(45deg);
 }
 
 .article-image {
@@ -250,108 +279,6 @@ header {
     text-decoration: underline;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.service-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.service-card:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.service-card:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.service-card:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.service-card:nth-child(4) {
-    animation-delay: 0.5s;
-}
-
-.service-card:nth-child(5) {
-    animation-delay: 0.6s;
-}
-
-.service-card:nth-child(6) {
-    animation-delay: 0.7s;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color);
-    transform: scaleY(0);
-    transition: var(--transition);
-    transform-origin: bottom;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    background: var(--card-hover);
-    border-color: var(--accent-color);
-}
-
-.service-card:hover::before {
-    transform: scaleY(1);
-}
-
-.service-card i {
-    font-size: 2rem;
-    color: var(--accent-color);
-    padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 12px;
-    transition: var(--transition);
-}
-
-.service-card:hover i {
-    background: white;
-    transform: scale(1.1);
-}
-
-.service-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.service-info h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.service-info p {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
 footer {
     text-align: center;
     padding-top: 1rem;
@@ -382,9 +309,9 @@ footer {
     box-shadow: var(--shadow-sm);
 }
 
-.contact-link i {
-    font-size: 1.25rem;
+.contact-link svg {
     color: var(--accent-color);
+    flex-shrink: 0;
 }
 
 .contact-link:hover {
@@ -411,11 +338,15 @@ footer {
         font-size: 3.5rem;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
     .container {
         padding: 2rem 1.5rem;
+    }
+
+    .spec-plate {
+        padding: 2rem 1.75rem;
+    }
+
+    .spec-plate h3 {
+        font-size: 1.7rem;
     }
 }
